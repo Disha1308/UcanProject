@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css" href="/css/luxtheme.css"> 
+<div ng-app="myApp" ng-controller="editUser">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  		<a class="navbar-brand" href="#">UCAN</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+    	<span class="navbar-toggler-icon"></span>
+  		</button>
+
+  		<div class="collapse navbar-collapse" id="navbarColor01">
+    		<form class="form-inline my-2 my-lg-0">
+      			<input class="form-control mr-sm-2" placeholder="Search" type="text">
+      			<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    		</form>
+    		<right>
+    		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item">
+        			<a class="nav-link" href="#home">Chat</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">Bookmarks</a>
+      			</li>
+    			<li class="nav-item">
+    				<a class="nav-link" href="#editUser">My Profile</a>
+    			</li>
+    		</ul>
+    		</right>
+  		</div>
+	</nav>
+	<br><br><br>
+	<div>
+    <center>
+    	Your user id is {{id}}.<br><br>
+		UserName  <input ng-model="username"/><br/><br/>
+		Password  <input type="password" ng-model="password" /><br/><br/>
+		Email     <input ng-model="email" /><br/><br/>
+		Contact   <input ng-model="contact" /><br/><br/>
+		Country   <input ng-model="country" /><br/><br/>
+		<input type="button" value="Edit" ng-click="editUser(username, password, email, contact, country)" /><br/><br/>
+		<p>{{msg}} {{statusCode}}</p>
+		<div ng-if = "statusCode">
+			<button ng-click="changeView('viewAll')">View All Users</button>
+		</div><br><br>
+	</center>
+</div>

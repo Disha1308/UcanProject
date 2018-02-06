@@ -1,0 +1,43 @@
+<link rel="stylesheet" type="text/css" href="/css/luxtheme.css"> 
+<div ng-app="myApp" ng-controller="topicSelection">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  		<a class="navbar-brand" href="#">UCAN</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+    	<span class="navbar-toggler-icon"></span>
+  		</button>
+
+  		<div class="collapse navbar-collapse" id="navbarColor01">
+    		<form class="form-inline my-2 my-lg-0">
+      			<input class="form-control mr-sm-2" placeholder="Search" type="text">
+      			<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    		</form>
+    		<right>
+    		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item">
+        			<a class="nav-link" href="#home">Chat</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">Bookmarks</a>
+      			</li>
+    			<li class="nav-item">
+    				<a class="nav-link" href="#editUser">My Profile</a>
+    			</li>
+    		</ul>
+    		</right>
+  		</div>
+	</nav>
+	<br><br><br>
+
+	<div>
+    <center>
+    	<div>
+			Hi there, user {{id}}! Please select some topics you would love to know more about!<br><br>
+			<div ng-repeat="topic in topicsArr">
+				<label for="{{topic.id}}">{{topic.name}}</label>
+				<input type="checkbox" name={{topic.id}} ng-model=checkedTopic[topic.id]><br>
+			</div>
+			<input type="button" value="Submit Choices" ng-click = "submitTopics()">
+		</div>
+		{{flag}}
+	</center>
+</div>

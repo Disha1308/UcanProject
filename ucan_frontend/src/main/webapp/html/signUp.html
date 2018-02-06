@@ -1,0 +1,17 @@
+<div ng-app="myApp" ng-controller="signUp">
+    <center>
+		UserName  <input ng-model="username" /><br/><br/>
+		Password  <input type="password" ng-model="password" /><br/><br/>
+		Email     <input ng-model="email" /><br/><br/>
+		Contact   <input ng-model="contact" /><br/><br/>
+		Country   <input ng-model="country" /><br/><br/>
+		<input type="button" value="Sign Up" ng-click="createUser(username, password, email, contact, country)" /><br/><br/>
+		<p> Output: {{msg}} {{statusCode}}</p>
+		<div ng-if = "statusCode">
+			<button ng-click="changeView('viewAll')">View All Users</button>
+		</div><br><br>
+		<div ng-if = "statusCode">
+			<button ng-click = "changeView('editUser')">Edit User Profile</button>
+		</div>
+	</center>
+</div>

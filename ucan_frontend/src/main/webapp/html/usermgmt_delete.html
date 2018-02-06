@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+AngularJs $http.delete()
+</title>
+</head>
+
+<body>
+<center>
+<div ng-app="deleteService" ng-controller="deleteServiceCtrl">
+<div>
+Id : <input ng-model="id" /><br/><br/>
+UserName : <input ng-model="username" /><br/><br/>
+Password : <input type="password" ng-model="password" /><br/><br/>
+Email : <input ng-model="email" /><br/><br/>
+Contact : <input ng-model="contact" /><br/><br/>
+Country : <input ng-model="country" /><br/><br/>
+<input type="button" value="Send" ng-click="deletedata(id, username, password, email, contact, country)" /> <br/><br/>
+</div>
+<p>Output Message : {{msg}}</p>
+</div>
+</center>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+
+  var app = angular.module('deleteService', []);
+  app.controller('deleteServiceCtrl', function ($scope, $http, $q)
+  {
+    $scope.id = null;
+    $scope.username = null;
+    $scope.password = null;
+    $scope.email = null;
+    $scope.contact = null;
+    $scope.country = null;
+    $scope.deletedata = function (in_id, in_username, in_password, in_email, in_contact, in_country)
+    {
+      var data =
+      {
+      	id: in_id,
+        userName: in_username,
+        password: in_password,
+    	email: in_email,
+    	contact: in_contact,
+    	country: in_country
+      };
+
+    var deferred = $q.defer();
+    $http.delete('http://localhost:8080/v1.0/users/4', JSON.stringify(data))
+    .success(function (response)
+    {
+      $scope.msg = "Data deleted successfully!";
+      deferred.resolve(response);	
+    })
+    .error(function(response)
+    {
+      $scope.msg = "Service doesn't exist!";
+      deferred.reject(response);
+    });
+    return deferred.promise;
+  };
+});
+</script>
+</body>
+</html>

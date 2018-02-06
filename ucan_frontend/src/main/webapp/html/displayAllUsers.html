@@ -1,0 +1,18 @@
+<div ng-app="myApp" ng-controller="displayAllUsers">
+  <div ng-if ="userRequests === 'Not Found'">
+    <p>Empty Set!</p>
+  </div>
+  <div>
+    <ul>
+      <li ng-repeat="request in userRequests" ng-if = "userRequests !== 'Not Found'" >
+        {{request.id}},
+        {{request.userName}},
+        {{request.password}},
+        {{request.email}},
+        {{request.contact}},
+        {{request.country}}
+        <hr></hr>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular Pull Request example</title>
+    </head>
+    <body ng-app="myApp">
+        <h1>Open Pull Requests for Angular JS</h1>
+        <ul ng-controller="UserMgmtController">
+          <div ng-if ="userRequests === 'Not Found'">
+            <p>Empty Set!</p>
+          </div>
+          <li ng-repeat="request in userRequests" ng-if = "userRequests !== 'Not Found'" >
+            {{request.id}},
+            {{request.userName}},
+            {{request.password}},
+            {{request.email}},
+            {{request.contact}},
+            {{request.country}}
+            <hr>
+          </li>
+        </ul>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+        <script type= "text/javascript" src="/home/komal/workspace/ucan_frontend/src/main/webapp/js/usermgmt_get.js"></script>
+    </body>
+</html>

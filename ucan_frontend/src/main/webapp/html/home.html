@@ -1,0 +1,57 @@
+<link rel="stylesheet" type="text/css" href="/css/luxtheme.css"> 
+<div ng-app="myApp" ng-controller="home">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  		<a class="navbar-brand" href="#home">UCAN</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+    	<span class="navbar-toggler-icon"></span>
+  		</button>
+
+  		<div class="collapse navbar-collapse" id="navbarColor01">
+    		<form class="form-inline my-2 my-lg-0">
+      			<input class="form-control mr-sm-2" placeholder="Search" type="text">
+      			<button class="btn btn-primary" type="submit">Search</button>
+    		</form>
+    		<right>
+    		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item">
+        			<a class="nav-link" href="#home">Chat</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#home">Bookmarks</a>
+      			</li>
+    			<li class="nav-item">
+    				<a class="nav-link" href="#editUser">My Profile</a>
+    			</li>
+    		</ul>
+    		</right>
+  		</div>
+	</nav>
+	
+	<br><br><br>
+	<center>
+		<div> 
+			Hello user {{id}}! Welcome to UCAN!
+			<br><br>
+			<div ng-if="topics_flag">
+				Topics you're following:<br>
+				<table width = "200" height= "200" class="table table-hover">
+					<tr class="table-primary">
+						<th>Topic Name</th>
+						<th>Followers</th>
+					</tr>
+					<tr class="table-primary" ng-repeat="topic in topicsSubscribed">
+						<td>{{topic.name}}</td>
+						<td>{{topic.followerCount}}</td>
+					</tr>
+				</table>
+			</div>
+			<div ng-if="!topics_flag">
+				Uh oh!<br>
+				We noticed you haven't chosen any topics yet!<br>
+				Choose some topics to populate your feed.<br>
+				<button class="btn btn-primary" ng-click="changeView('topicSelection')">Choose Topics</button><br/>
+			</div>
+		</div>
+	</center>
+</div>
+
