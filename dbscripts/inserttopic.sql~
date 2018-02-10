@@ -1,0 +1,19 @@
+INSERT INTO topic(
+	id, follower_count, name)
+	VALUES (1, null, 'cpp');
+	
+INSERT INTO topic(
+	id, follower_count, name)
+	VALUES (2, null, 'java');
+	
+INSERT INTO topic(
+	id, follower_count, name)
+	VALUES (3, null, 'python');
+	
+INSERT INTO topic(
+	id, follower_count, name)
+	VALUES (4, null, 'spring');
+	
+INSERT INTO topic(
+	id, follower_count, name)
+	VALUES (5, null, 'programming');

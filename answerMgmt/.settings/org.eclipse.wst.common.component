@@ -8,6 +8,6 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/userMgmt/target/classes"/>
-        <property name="context-root" value="answerMgmt2"/>
+        <property name="context-root" value="answerMgmt"/>
     </wb-module>
 </project-modules>

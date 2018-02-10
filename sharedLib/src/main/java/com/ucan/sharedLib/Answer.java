@@ -5,11 +5,13 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "Answers")
@@ -18,9 +20,13 @@ public class Answer implements Serializable
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	private long upvoteCount;
+	private long downvoteCount;
+	@Lob
+	@Type(type = "org.hibernate.type.TextType")
 	private String description;
-
-	boolean status;
+	private boolean status;
 	
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
@@ -79,6 +85,24 @@ public class Answer implements Serializable
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public long getUpvoteCount() {
+		return upvoteCount;
+	}
+
+	public void setUpvoteCount(long upvoteCount) {
+		this.upvoteCount = upvoteCount;
+	}
+
+	public long getDownvoteCount() {
+		return downvoteCount;
+	}
+
+	public void setDownvoteCount(long downvoteCount) {
+		this.downvoteCount = downvoteCount;
+	}
+
+
 	
 	
 	

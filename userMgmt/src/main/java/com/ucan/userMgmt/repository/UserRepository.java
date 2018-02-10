@@ -14,4 +14,5 @@ public interface UserRepository extends CrudRepository<User, Long>
 	List<User> findByinterestedTopics(Topic t);
 	List<User> findByexpertiseTopics(Topic t);
 	User findByemail(String email);
+	User findByuserName(String username);
 }

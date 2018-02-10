@@ -15,15 +15,9 @@ public class Topic implements Serializable {
 	@GeneratedValue
 	private long Id;
 	private String name;
-	private String followerCount;
-
-	public String getFollowerCount() {
-		return followerCount;
-	}
-
-	public void setFollowerCount(String followerCount) {
-		this.followerCount = followerCount;
-	}
+	private String photopath;
+	private String topicdesciption;
+	
 
 	public long getId() {
 		return Id;
@@ -40,5 +34,23 @@ public class Topic implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getPhotopath() {
+		return photopath;
+	}
+
+	public void setPhotopath(String photopath) {
+		this.photopath = photopath;
+	}
+
+	public String getTopicdesciption() {
+		return topicdesciption;
+	}
+
+	public void setTopicdesciption(String topicdesciption) {
+		this.topicdesciption = topicdesciption;
+	}
+
+
 
 }

@@ -23,11 +23,8 @@ public class DiscussionSession implements Serializable
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	String status;
-	
 	Timestamp discussiontime;
-	
 	private long upvoteCount;
-
 	private long downvoteCount;
 	
 	@ManyToOne

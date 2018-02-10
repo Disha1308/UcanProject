@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ucan</groupId>
-  <artifactId>Negotiation2</artifactId>
+  <artifactId>Negotiation</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>Negotiation Maven Webapp</name>
@@ -92,6 +92,6 @@
 
 	</dependencies>
 	<build>
-    <finalName>Negotiation2</finalName>
+    <finalName>Negotiation</finalName>
   </build>
 </project>

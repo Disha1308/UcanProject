@@ -37,13 +37,13 @@ public class DiscussionSessionRest {
 	
 	
 	/* POST function to upvote a answer session */
-	@RequestMapping(value=URLConstants.POST_ANSWER_UPVOTE,method=RequestMethod.POST)
+	@RequestMapping(value=URLConstants.POST_ANSWER_SESSION_UPVOTE,method=RequestMethod.POST)
 	public void upvoteAnswer(@PathVariable("discussionsession") long sId) {
 		sService.upvoteAnswer(sId);
 	}
 	
-	/* POST function to downvote a answer */
-	@RequestMapping(value=URLConstants.POST_ANSWER_DOWNVOTE,method=RequestMethod.POST)
+	/* POST function to downvote a answer session*/
+	@RequestMapping(value=URLConstants.POST_ANSWER_SESSION_DOWNVOTE,method=RequestMethod.POST)
 	public void downvoteQuestion(@PathVariable("discussionsession") long sId) {
 		sService.downvoteAnswer(sId);
 	}

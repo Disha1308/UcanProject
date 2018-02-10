@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ucan.answerMgmt.service.QuestionAnswerService;
@@ -37,6 +38,16 @@ public class QuestionAnswerRest
 
 	}
 
-
+	/* POST function to upvote a answer */
+	@RequestMapping(value=URLConstants.POST_ANSWER_UPVOTE,method=RequestMethod.POST)
+	public void upvoteAnswer(@PathVariable("answerid") long aId) {
+		answerServe.upvoteAnswer(aId);
+	}
+	
+	/* POST function to downvote a answer */
+	@RequestMapping(value=URLConstants.POST_ANSWER_DOWNVOTE,method=RequestMethod.POST)
+	public void downvoteQuestion(@PathVariable("answerid") long aId) {
+		answerServe.downvoteAnswer(aId);
+	}
 
 }

@@ -1,0 +1,28 @@
+INSERT INTO public.final_ucan_users_expertise_topics(
+	user_id, expertise_topics_id)
+	VALUES (1, 1);
+	
+INSERT INTO public.final_ucan_users_expertise_topics(
+	user_id, expertise_topics_id)
+	VALUES (2, 2);
+	
+INSERT INTO public.final_ucan_users_expertise_topics(
+	user_id, expertise_topics_id)
+	VALUES (3,5);
+	
+INSERT INTO public.final_ucan_users_expertise_topics(
+	user_id, expertise_topics_id)
+	VALUES (4,4);
+	
+INSERT INTO public.final_ucan_users_expertise_topics(
+	user_id, expertise_topics_id)
+	VALUES (5,3);
+
+INSERT INTO public.final_ucan_users_expertise_topics(
+	user_id, expertise_topics_id)
+	VALUES (6,3);
+	
+
+INSERT INTO public.final_ucan_users_expertise_topics(
+	user_id, expertise_topics_id)
+	VALUES (7,1);

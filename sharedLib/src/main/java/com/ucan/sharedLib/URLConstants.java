@@ -5,6 +5,7 @@ public interface URLConstants {
 	// Port 8080
 	static final String GET_USER_URL = "/users/{email}";
 	static final String GET_USER_ID_URL = "/users/id/{id}";
+	static final String GET_USER_USERNAME_URL = "/users/username/{username}";
 	static final String POST_USER_URL = "/users";
 	static final String PUT_USER_URL = "/users/{id}";
 	static final String DELETE_USER_URL = "/users/{id}";
@@ -53,13 +54,15 @@ public interface URLConstants {
 	//Port 8083
 	static final String GET_QUESTION_ANSWERS_URL = "/question/{questionid}/answers";
 	static final String GET_USER_ANSWERS_URL = "/users/{userid}/answers";
+	static final String POST_ANSWER_UPVOTE = "/answer/{answerid}/upvote";
+	static final String POST_ANSWER_DOWNVOTE = "/answer/{answerid}/downvote";
 	
 	//Port 8083
 	static final String POST_DISCUSSION_SESSION_URL = "/discussionsession";
 	static final String GET_USER_DISCUSSION_SESSION_URL = "/user/{userid}/discussionsession";
 	static final String GET_SESSION_ANSWERS_URL = "/discussionsession/{dsid}/answers";
-	static final String POST_ANSWER_UPVOTE = "/answersession/{discussionsession}/upvote";
-	static final String POST_ANSWER_DOWNVOTE = "/answersession/{discussionsession}/downvote";
+	static final String POST_ANSWER_SESSION_UPVOTE = "/answersession/{discussionsession}/upvote";
+	static final String POST_ANSWER_SESSION_DOWNVOTE = "/answersession/{discussionsession}/downvote";
 	static final String GET_QUESTION_DISCUSSION_SESSION_URL = "/question/{questionid}/discussionsession";
 	
 	//Port 8085

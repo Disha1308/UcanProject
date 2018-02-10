@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -15,6 +16,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "Questions")
@@ -23,6 +25,8 @@ public class Question implements Serializable {
 	@Id
 	@GeneratedValue
 	private long id;
+	@Lob
+	@Type(type = "org.hibernate.type.TextType")
 	private String questionText;
 	private String title;
 	private String preferredLanguage;

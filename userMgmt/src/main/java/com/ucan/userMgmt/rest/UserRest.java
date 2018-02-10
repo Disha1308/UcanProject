@@ -43,9 +43,16 @@ public class UserRest {
 		User u = userServe.getOneUserbyIdService(uid);
 
 		return u;
-
 	}
-
+	
+	@GET
+	@Path(URLConstants.GET_USER_USERNAME_URL)
+	@Produces(MediaType.APPLICATION_JSON)
+	public User getUserbyUsername(@PathParam("username") String username) {
+		System.out.println("in get one db user service");
+		User u = userServe.getOneUserbyUsername(username);
+		return u;
+	}
 
 	@POST
 	@Path(URLConstants.POST_USER_URL)

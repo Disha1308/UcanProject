@@ -3,11 +3,13 @@ package com.ucan.Negotiation.config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.ucan.sharedLib.PortConstants;
+
 @SpringBootApplication
 public class Application {
 	public static void main(String[] args) {
 
-		System.getProperties().put( "server.port", 8089 );
+		System.getProperties().put( "server.port", PortConstants.NEGOTIATION );
 		SpringApplication.run(Application.class, args);
 	}
 }

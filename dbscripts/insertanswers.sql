@@ -1,0 +1,186 @@
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (22951722, '<p><strong>TL;DR</strong>: Yes, Concepts are (or at least allow you to define) existential types.</p><hr><p>Heres my reasoning, though be warned; Im not a type theorist:</p><p>Consider <a href="http://en.wikipedia.org/wiki/Abstract_data_type" rel="nofollow noreferrer">Wikipedias definition of abstract data type</a> (emphasis mine):</p><blockquote> <p>In computer science, an abstract data type (ADT) is <strong>a mathematical model for a certain class of  data types</strong> of one or more programming languages that have similar semantics. An abstract data type is <strong>defined indirectly, only by the operations that may be performed on it and by mathematical constraints on the effects (and possibly cost) of those operations</strong>.</p>
+</blockquote><p>Existential types, as described by <a href="https://stackoverflow.com/questions/292274/what-is-an-existential-type">these</a> <a href="https://stackoverflow.com/questions/14299638/existential-vs-universally-quantified-types-in-haskell">two</a> Stack Overflow questions and the Wikipedia article you linked, seem to be a way of modelling abstract data types using parameterized definitions. Importantly, those parameters are <em>not</em> part of the resulting existential type.</p><p>At face value, a concept on the other hand is a predicate on one (zero?) or more types, which can be used to restrict templates. Its not obvious that they bear any relation to existential types— until you consider <code>requires</code> clauses.</p><p>Basically, <code>requires</code> allows you to test for certain properties of types. Among these are whether they define a certain member type, have a certain member function, are convertible to certain types, etc. This observation (the main point of design, really) is where the meat of the matter lies.</p><p>It seems to me, at least, that what concepts fundamentally are is a mechanism for defining abstract data types. This is where we begin to see the similarity to existential types: they model ADTs by parameterization, and more importantly, allow you to define the ADT <em>without exposing the parameters</em>.</p><p>Take the <code>Container</code> concept, for example. You may, with Concepts Lite, write something like</p><pre><code>void print (Container c) {    for (const auto&amp; e : c)        print (e);}// Laterprint (std::vector &lt;int&gt; {1, 2, 3, 4});</code></pre><p>This works because there <em>exists</em> some type <code>I</code> such that the expressions <code>begin (c)</code> and <code>end (c)</code> return objects of type  <code>I</code>, along with <code>Container</code>s other constraints. Thats existential quantification; <code>Container</code> is an existential type.</p>', 0, false, 4, 1, 22950041, null);
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (22950359, '<p>As far as I know, C++ concepts are arbitrary type predicates. The work on C++ concepts concentrates more on how these predicates integrate into the language rather than on giving a particular meaning or specifying a mathematical / logical model. The idea is that exactly as a function</p>
+
+<pre><code>void f(double x);
+</code></pre>
+
+<p>is clearly expecting a parameter of type <code>double</code>, in such a simple way</p>
+
+<pre><code>template &lt;Container C&gt;
+void f(const C&amp; c);
+</code></pre>
+
+<p>is expecting not just a <code>typename</code> but a <code>Container</code>. Now, how is <code>Container</code> defined? It could be e.g.</p>
+
+<pre><code>template &lt;typename T&gt;
+struct Container: std::false_type { };
+
+template &lt;typename T, size_t N&gt;
+struct Container &lt;std::array&lt;T, N&gt; &gt;: std::true_type { };
+
+template &lt;typename T, typename A&gt;
+struct Container &lt;std::vector&lt;T, A&gt; &gt;: std::true_type { };
+</code></pre>
+
+<p>and so on. Predicates like <code>Container</code> exist now, but to integrate them into a template function requires inconvenient constructs like <code>std::enable_if</code>. Concepts will make this cleaner and easier to use.</p>
+
+<p>This again, is just roughly my understanding.</p>
+', 0, false, 3, 7, 22950041, null);
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (597367, '<p>I use VSPerfMon which is the StandAlone Visual Studio Profiler. I wrote a GUI tool to help me run it and look at the results.</p>
+
+<p><a href="http://code.google.com/p/vsptree/" rel="nofollow noreferrer">http://code.google.com/p/vsptree/</a></p>
+', 1, false, 1, 7, 67554, null);
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (1657469, '<p>Proffy is quite cool:  <a href="http://pauldoo.com/proffy/" rel="noreferrer">http://pauldoo.com/proffy/</a></p><p>Disclaimer: I wrote this.</p>
+', 0, false, 34, 1, 67554, null);
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (67577, '<p><a href="http://gpuopen.com/compute-product/codexl/" rel="noreferrer">CodeXL</a> has now superseded the End Of Lined <a href="http://developer.amd.com/tools-and-sdks/archive/amd-codeanalyst-performance-analyzer/" rel="noreferrer">AMD Code Analyst</a> and both are free, but not as advanced as VTune. Theres also <a href="http://www.codersnotes.com/sleepy/" rel="noreferrer">Sleepy</a>, which is very simple, but does the job in many cases. </p>', 1, false, 125, 1, 67554, null);
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (69153, '<p>Ive used "TrueTime - part of Compuwares DevPartner suite for years. Theres a [free version](you could try Compuware DevPartner Performance Analysis Community Edition.) available.</p>
+', 0, false, 3, 1, 67554, null);
+
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (2990425, '<p><a href="http://www.codersnotes.com/sleepy/" rel="nofollow noreferrer">Very Sleepy</a> is a C/C++ CPU profiler for Windows systems (free).<br>
+<a href="http://cppcheck.sourceforge.net/" rel="nofollow noreferrer">CppCheck</a> is a static C/C++ CPU profiler for Windows systems (free).</p>
+', 0, false, 57, 7, 67554, null);
+
+
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (1096648, '<p>In general, automatic conversions from one language to another will not be an improvement. Different languages have different idioms that affect performance.</p>
+
+<p>The simplest example is with loops and variable creation. In a Java GC world, creating objects with new is almost free, and they dive into oblivion just as easily. In C++ memory allocation is (generally speaking) expensive:</p>
+
+<pre><code>// Sample java code
+for ( int i = 0; i &lt; 10000000; ++i )
+{
+   String str = new String( "hi" ); // new is free, GC is almost free for young objects
+}
+</code></pre>
+
+<p>Direct conversion to C++ will result in bad performance (use of TR1 shared_ptr as memory handler instead of GC): </p>
+
+<pre><code>for ( int i = 0; i &lt; 10000000; ++i )
+{
+   std::shared_ptr&lt; std::string &gt; str( new std::string( "hi" ) );
+}
+</code></pre>
+
+<p>The equivalent loop written in C++ would be:</p>
+
+<pre><code>for ( int i = 0; i &lt; 10000000; ++i )
+{
+   std::string str( "hi" );
+}
+</code></pre>
+
+<p>Direct translation from a language to another usually ends with the worst of both worlds and harder to maintain code.</p>
+', 0, false, 17, 2, 1096615, null);
+	
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (9119563, '<p>Assuming you already have a JFrame to call this from:</p>
+
+<pre><code>JOptionPane.showMessageDialog(frame, "thank you for using java");
+</code></pre>
+
+<p>See <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html" rel="noreferrer">The Java Tutorials: How to Make Dialogs</a><br/>
+See <a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html" rel="noreferrer">the JavaDoc</a></p>
+
+', 0, false, 31, 2, 9119481, null);
+	
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (9119548, '<p>Ill be the first to admit Java can be very verbose, but I dont think this is unreasonable:</p>
+
+<pre><code>JOptionPane.showMessageDialog(null, "My Goodness, this is so concise");
+</code></pre>
+
+<p>If you statically import <code>JOptionPane.showMessageDialog</code> this further reduces to </p>
+
+<pre><code>showMessageDialog(null, "This language just gets better and better!");
+</code></pre>
+', 0, false, 185, 2, 9119481, null);
+	
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (19100774, '<p>If you dont like "verbosity" you can always wrap your code in a short method:</p>
+
+<pre><code>private void msgbox(String s){
+   JOptionPane.showMessageDialog(null, s);
+}
+</code></pre>
+
+<p>and the useage:</p>
+
+<pre><code>msgbox("dont touch that!");
+</code></pre>', 1, false, 20, 7, 9119481, null);
+
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (30531939, '<p>You can use the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.drop_duplicates.html"><code>drop_duplicates</code></a> method to get the unique rows in a DataFrame:</p>
+
+<pre><code>In [29]: df = pd.DataFrame({a:[1,2,1,2], b:[3,4,3,5]})
+
+In [30]: df
+Out[30]:
+   a  b
+0  1  3
+1  2  4
+2  1  3
+3  2  5
+
+In [32]: df.drop_duplicates()
+Out[32]:
+   a  b
+0  1  3
+1  2  4
+3  2  5
+</code></pre>
+
+<p>You can also provide the <code>subset</code> keyword argument if you only want to use certain columns to determine uniqueness. See the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.drop_duplicates.html">docstring</a>.</p>
+
+', 0, false, 65, 6, 30530663, null);
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (4881763, '<p>Can you run a preprocessing step?  Doxygen parses most C++ syntax and creates xml with all the relationships.  Compilers also create debug databases (typically dwarf format from gcc and codeview format from MSC).</p>
+', 0, false, 3, 6, 4881377, null);
+
+
+
+
+INSERT INTO public.answers(
+	id, description, downvote_count, status, upvote_count, owner_user_id, question_id, session_id)
+	VALUES (4881405, '<p>Ive had good experience with PLY: </p>
+
+<p><a href="http://www.dabeaz.com/ply/" rel="nofollow">http://www.dabeaz.com/ply/</a></p>
+
+<p>But this requires some experience with lex and yacc</p>
+
+', 1, false, 2, 1, 4881377, null);
+
+
+
