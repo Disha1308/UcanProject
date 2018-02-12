@@ -18,7 +18,6 @@ public class TopicSubscriptionService {
 	@Autowired
 	UserRepository userRepo;
 	
-
 	public static Predicate<Topic> isid(long id) {
 		return p -> p.getId() == id;
 	}
@@ -58,6 +57,15 @@ public class TopicSubscriptionService {
 		{
 			uList.addAll(userRepo.findByexpertiseTopics(tIterator.next()));
 		}
+		return uList;
+	}
+	
+	public List<User> gettopicExperts(long topicId) {		
+		List<User> uList = new ArrayList<User>();
+		Topic topicexpert = new Topic();
+		topicexpert.setId(topicId);
+		uList.addAll(userRepo.findByexpertiseTopics(topicexpert));
+		
 		return uList;
 	}
 	

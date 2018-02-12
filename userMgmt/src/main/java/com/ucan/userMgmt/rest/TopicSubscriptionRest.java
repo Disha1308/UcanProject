@@ -42,10 +42,19 @@ public class TopicSubscriptionRest {
 
 	/* Get function for experts belonging to particular topic */
 	@GET
-	@Path(URLConstants.GET_TOPIC_EXPERTS_URL)
+	@Path(URLConstants.GET_TOPICS_EXPERTS_URL)
 	@Produces({ MediaType.APPLICATION_JSON })
 	public List<User> getAllExperts(@RequestBody List<Topic> topicId) {
 		return userServe.getAllExperts(topicId);
+
+	}
+	
+	/* Get function for experts belonging to particular topic */
+	@GET
+	@Path(URLConstants.GET_TOPIC_EXPERTS_URL)
+	@Produces({ MediaType.APPLICATION_JSON })
+	public List<User> getAllExperts(@PathParam("topicid")long topicId) {
+		return userServe.gettopicExperts(topicId);
 
 	}
 

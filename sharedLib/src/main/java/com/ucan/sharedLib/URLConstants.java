@@ -19,6 +19,8 @@ public interface URLConstants {
 	static final String DELETE_USER_EXPERTISE_TOPIC_URL = "users/{userid}/expertisetopics/{topicid}/";
 	static final String GET_TOPIC_EXPERTS_URL = "/topics/{topicid}/experts/";
 	static final String GET_TOPIC_FOLLOWERS_URL = "/topics/{topicid}/followers/";
+	static final String GET_TOPICS_EXPERTS_URL = "/topics/experts/";
+	
 
 	// Port 8081
 	static final String GET_TOPICS_URL = "/topics";

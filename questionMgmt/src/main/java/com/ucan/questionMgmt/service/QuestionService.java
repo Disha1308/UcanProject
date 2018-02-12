@@ -54,7 +54,7 @@ public class QuestionService {
 			while(tagit.hasNext())
 			{
 				long tagid = tagit.next().getId();
-				ResponseEntity < List < User >> response =restT.exchange("http://localhost:8080//topics/"+tagid+"/experts/", HttpMethod.GET, null, new ParameterizedTypeReference < List < User >> () {});
+				ResponseEntity < List < User >> response =restT.exchange("http://localhost:8080/v1.0/topics/"+tagid+"/experts/", HttpMethod.GET, null, new ParameterizedTypeReference < List < User >> () {});
 				experts.addAll(response.getBody());
 			}
 			return experts;
