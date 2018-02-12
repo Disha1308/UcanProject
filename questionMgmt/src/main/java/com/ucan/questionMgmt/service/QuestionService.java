@@ -49,8 +49,10 @@ public class QuestionService {
 		try {
 			questionRepo.save(u);
 			RestTemplate restT = new RestTemplate();
-			List<User> experts = new ArrayList<User>();
-			Iterator<Topic> tagit = u.getTags().iterator();
+			List<User> experts = new ArrayList<User>();	
+			if(u.getTags()==null)
+				return null;
+			Iterator<Topic> tagit = u.getTags().iterator();		
 			while(tagit.hasNext())
 			{
 				long tagid = tagit.next().getId();
