@@ -30,7 +30,15 @@ public class Answer implements Serializable
 	
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	private Question question;
+	private Question ownerQuestion;
+
+	public Question getOwnerQuestion() {
+		return ownerQuestion;
+	}
+
+	public void setOwnerQuestion(Question ownerquestion) {
+		this.ownerQuestion = ownerquestion;
+	}
 
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
@@ -47,14 +55,6 @@ public class Answer implements Serializable
 
 	public void setStatus(boolean status) {
 		this.status = status;
-	}
-
-	public Question getQuestion() {
-		return question;
-	}
-
-	public void setQuestion(Question question) {
-		this.question = question;
 	}
 	
 	public User getOwnerUser() {

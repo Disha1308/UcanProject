@@ -14,5 +14,4 @@ public interface AnswerRepository extends CrudRepository<Answer, Long>
 	List<Answer> findByownerUserId(long userId);
 	List<Answer> findBysessionId(long sid);
 	
-	
 }
