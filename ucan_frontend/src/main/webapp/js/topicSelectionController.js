@@ -6,7 +6,7 @@ myApp.controller('topicSelection',function($scope, $rootScope, $http, $q, $locat
 	//$scope.pushApiTopics = [];	//push these topics into the backend for this user
 
 	//retrieving topics(id,name,followers) stored in database
-	var url = "http://localhost:8081/v1.0/topics";
+	var url = "http://localhost:8091/v1.0/topics";
 	$http.get(url)
 	.success(function(api_response)
 	{
