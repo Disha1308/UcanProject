@@ -50,6 +50,7 @@ public class QuestionTagService {
 		Iterator<Topic> tIterator = topicId.iterator();
 		while (tIterator.hasNext())
 		{
+			
 			qList.addAll(qRepo.findBytags(tIterator.next()));
 		}
 		return qList;
@@ -74,8 +75,5 @@ public class QuestionTagService {
 		
 		return getQuestionsService(u.getExpertiseTopics());
 	}
-
-
-	
 
 }

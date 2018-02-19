@@ -3,7 +3,6 @@ package com.ucan.questionMgmt.rest;
 import java.util.List;
 
 import javax.inject.Named;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -40,7 +39,7 @@ public class QuestionTagRest
 		}
 		
 		/* function to fetch the questions of multiple topics when ids are given */
-		@GET
+		@POST
 		@Path(URLConstants.GET_QUESTIONS_TAGS_URL)
 		@Produces(MediaType.APPLICATION_JSON)
 		public List<Question> getQuestions(@RequestBody List<Topic> topicId)
