@@ -1,4 +1,4 @@
-package com.ucan.answerMgmt.config;
+/*package com.ucan.answerMgmt.config;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Configuration;
@@ -61,3 +61,4 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 	}
 
 }
+*/

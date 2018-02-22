@@ -18,8 +18,8 @@ public class AnswerService {
 	AnswerRepository answerRepo;
 	
 
-	@Autowired
-	private SimpMessagingTemplate simpMessagingTemplate;
+	//@Autowired
+	//private SimpMessagingTemplate simpMessagingTemplate;
 
 	public List<Answer> getAllAnswers() {
 
@@ -43,7 +43,7 @@ public class AnswerService {
 
 	}
 
-	public void createAnswer(Answer u) {
+/*	public void createAnswer(Answer u) {
 		System.out.println("in post db answer service");
 		try {
 			answerRepo.save(u);
@@ -65,8 +65,12 @@ public class AnswerService {
 		}
 	}
 
-	public List<Answer> getSessionAnswers(long sid) {
+*/	public List<Answer> getSessionAnswers(long sid) {
 		return answerRepo.findBysessionId(sid);
+	}
+
+	public void createaAnswer(Answer a) {
+		answerRepo.save(a);
 	}
 
 }

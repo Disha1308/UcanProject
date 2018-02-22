@@ -25,7 +25,7 @@ public class DiscussionSessionRest {
 	@MessageMapping(value=URLConstants.POST_DISCUSSION_SESSION_URL)
 	public void createDiscussionSession(@RequestBody List<DiscussionSession> sessionList) {
 		System.out.println("in post db session service");
-		sService.createDiscussionSession(sessionList);		
+		//sService.createDiscussionSession(sessionList);		
 	}
 	
 

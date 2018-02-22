@@ -41,7 +41,7 @@ public class TopicSubscriptionRest {
 	}
 
 	/* Get function for experts belonging to particular topic */
-	@GET
+	@POST
 	@Path(URLConstants.GET_TOPICS_EXPERTS_URL)
 	@Produces({ MediaType.APPLICATION_JSON })
 	public List<User> getAllExperts(@RequestBody List<Topic> topicId) {

@@ -1,4 +1,4 @@
-package com.ucan.answerMgmt.config;
+/*package com.ucan.answerMgmt.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -17,3 +17,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.addFilter(new AuthenticationProcessingFilter()).authorizeRequests().antMatchers("/**").permitAll().anyRequest().permitAll();
 	}
 }
+*/

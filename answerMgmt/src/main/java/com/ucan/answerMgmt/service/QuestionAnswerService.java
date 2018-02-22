@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.ucan.answerMgmt.repository.AnswerRepository;
 import com.ucan.sharedLib.Answer;
-import com.ucan.sharedLib.DiscussionSession;
 
 @Service
 public class QuestionAnswerService {

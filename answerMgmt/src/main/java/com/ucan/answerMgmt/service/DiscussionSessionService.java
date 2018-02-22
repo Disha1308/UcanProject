@@ -19,10 +19,10 @@ public class DiscussionSessionService
 	DiscussionSessionRepository sRepo;
 	
 
-	@Autowired
-	private SimpMessagingTemplate simpMessagingTemplate;
+	//@Autowired
+	//private SimpMessagingTemplate simpMessagingTemplate;
 	
-	public void createDiscussionSession(List<DiscussionSession> sessionList) 
+	/*public void createDiscussionSession(List<DiscussionSession> sessionList) 
 	{
 		Iterator<DiscussionSession> sit = sessionList.iterator();
 		while(sit.hasNext())
@@ -40,7 +40,7 @@ public class DiscussionSessionService
 			}, s.getDiscussiontime());
 		}
 	}
-
+*/
 	public List<DiscussionSession> getUserDiscussionSession(long uid) 
 	{
 		List<DiscussionSession> sessions = sRepo.findByseekerId(uid);
